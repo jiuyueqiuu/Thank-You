@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <style>
+    body {
+      font-family: "Times New Roman", sans-serif;
+      text-align: center;
+      background-color: #f5f5f5; 
+      color: #333;
+      margin: 0;
+      padding: 40px;
+    }
+    h1 {
+      font-weight: 450;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    button {
+      margin-left: 10px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ebe349;
+      color: black;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+    }
+    #greeting {
+      margin-top: 30px;
+      font-size: 1.3em;
+    }
+  </style>
+</head>
+<body>
+  <h1>你好！Hello There! Bonjour ! </h1>
+  <br>
+  <hr>
+  <br>
+  <p>Welcome! Fret not, don't panic. Before we begin, may I please know your name?</p>
+  <br>
+  <p>欢迎！请不要紧张。在开始之前，请问我能先知晓你的名字吗？</p>
+  <br>
+  <p>Bienvenu! Ne t'inquiète et ne panique pas. Avant de commencer, puis-je connaître ton nom STP?</p>
+  <br>
+  <input type="text" id="nameInput" placeholder="Enter your name/Entre ton nom/输入你的姓名">
+<button onclick="askName()">Continue</button>
+
+<div id="greeting"></div>
+
+<script>
+  function askName() {
+    const name = document.getElementById("nameInput").value;
+    if (name.trim() !== "") {
+      document.getElementById("greeting").textContent =
+        "It’s so nice to have you here, " + name + "! / 很高兴你在这里，" + name + "!";
+      localStorage.setItem("username", name);
+      window.open("ChooseLang.html", "_blank");
+    } else {
+      document.getElementById("greeting").textContent =
+        "Please type your name first / STP entre ton nom complet / 请输入你的姓名";
+    }
+  }
+</script>
+
+
+</body>
+</html>
