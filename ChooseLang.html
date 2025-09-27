@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ChooseLang</title>
+  <style>
+    body {
+      font-family: "Times New Roman", sans-serif;
+      text-align: center;
+      background-color: #f5f5f5; 
+      color: #333;
+      margin: 0;
+      padding: 40px;
+      padding-top: 50px;
+    }
+    h1, h2 {
+      font-weight: 450;
+      margin-bottom: 20px;
+    }
+    .lang-buttons {
+      margin-top: 40px;
+    }
+    a button {
+      margin: 10px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ebe349;
+      color: black;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    a button:hover {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="pageTitle1"></h1>
+  <h2 id="pageTitle2"></h2>
+  <h2 id="pageTitle3"></h2>
+
+  <!-- Language selection buttons -->
+  <div class="lang-buttons">
+    <a href="Français.html"><button>Français</button></a>
+    <a href="中文.html"><button>中文</button></a>
+    <a href="English.html"><button>English</button></a>
+  </div>
+
+  <script>
+    const name = localStorage.getItem("username") || "my friend";
+
+    document.getElementById("pageTitle1").textContent =
+      `Je te souhaite une très bonne journée, ${name}, maintenant, choisis ta langue préférée :`;
+
+    document.getElementById("pageTitle2").textContent =
+      `我希望你有美好的一天, ${name}, 现在请选择一种语言：`;
+
+    document.getElementById("pageTitle3").textContent =
+      `I hope you are having a great day, ${name}, now please choose your preferred language:`;
+  </script>
+</body>
+</html>
